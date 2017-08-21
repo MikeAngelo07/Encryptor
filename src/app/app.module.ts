@@ -15,6 +15,10 @@ import {
   PreloadAllModules
 } from '@angular/router';
 
+import "../../node_modules/materialize-css/dist/js/materialize.js";
+
+import { MaterializeModule } from "angular2-materialize";
+
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -29,7 +33,7 @@ import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
 
-import '../styles/styles.scss';
+import '../styles/styles.scss'; 
 import '../styles/headings.css';
 
 // Application wide providers
@@ -63,7 +67,8 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    MaterializeModule
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.

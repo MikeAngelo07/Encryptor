@@ -3,6 +3,7 @@ import {
   OnInit
 } from '@angular/core';
 
+
 import { AppState } from '../app.service';
 import { Title } from './title';
 import { XLargeDirective } from './x-large';
@@ -47,6 +48,7 @@ export class HomeComponent implements OnInit {
     /**
      * this.title.getData().subscribe(data => this.data = data);
      */
+
   }
 
   public submitState(value: string) {
