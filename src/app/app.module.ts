@@ -15,9 +15,9 @@ import {
   PreloadAllModules
 } from '@angular/router';
 
-import "../../node_modules/materialize-css/dist/js/materialize.js";
+import '../../node_modules/materialize-css/dist/js/materialize.js';
 
-import { MaterializeModule } from "angular2-materialize";
+import { MaterializeModule } from 'angular2-materialize';
 
 /*
  * Platform and Environment providers/directives/pipes

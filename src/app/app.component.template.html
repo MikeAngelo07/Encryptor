@@ -1,32 +1,34 @@
- <nav>
-      <a [routerLink]=" ['./'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Index
-      </a>
-      <a [routerLink]=" ['./home'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Utilidades
-      </a>
-      <a [routerLink]=" ['./detail'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Detail
-      </a>
-      <a [routerLink]=" ['./barrel'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Barrel
-      </a>
-      <a [routerLink]=" ['./about'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        About
-      </a>
-    </nav>
+<div class="navbar-fixed ">
+  <nav>
+    <div class="nav-wrapper blue darken-1">
+      <a [routerLink]=" ['./'] " class="brand-logo transparent">Encriptor</a>
+      <ul class="right hide-on-med-and-down">
+          
+        <li>
+            <a  class ="transparent" [routerLink]=" ['./home'] "
+              routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+              Utilidades
+              
+          </a>
+        </li>
+        <li>
+          <a  class ="transparent" [routerLink]=" ['./detail'] "
+              routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+              Perfil
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+</div>
 
-    <main>
-      <router-outlet></router-outlet>
-    </main>
 
-    <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
+<main>
+  <router-outlet></router-outlet>
+</main>
 
-    <footer>
-      <span>Migue Ang Rz <a [href]="url">@Migue1Anguiano</a></span>       
-    </footer>
+
+<footer>
+  <span>Migue Ang Rz <a [href]="url" target="_blank">@Migue1Anguiano</a></span>       
+</footer>
