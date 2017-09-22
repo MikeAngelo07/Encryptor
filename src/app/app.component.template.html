@@ -1,9 +1,16 @@
 <div class="navbar-fixed ">
   <nav>
     <div class="nav-wrapper blue darken-1">
-      <a [routerLink]=" ['./'] " class="brand-logo transparent">Encriptor</a>
+      <a [routerLink]=" ['./'] " class="brand-logo transparent">Encryptor</a>
       <ul class="right hide-on-med-and-down">
           
+        <li>
+          <a  class ="transparent" [routerLink]=" ['./'] "
+            routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+            Encryptor
+            
+        </a>
+      </li>
         <li>
             <a  class ="transparent" [routerLink]=" ['./home'] "
               routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
@@ -25,7 +32,10 @@
 
 
 <main>
-  <router-outlet></router-outlet>
+    <div class="container">
+        <!-- Page Content goes here -->
+        <router-outlet></router-outlet>
+    </div>
 </main>
 
 

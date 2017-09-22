@@ -4,45 +4,39 @@
   <hr>
 
   <div>
-    For hot module reloading run
-    <pre>npm run start:hmr</pre>
+      INPUT file
   </div>
 
   <hr>
 
+
   <div>
-    <h4>Local State</h4>
+    <h4>Carga de archivo</h4>
 
-    <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
+    <form materialize (ngSubmit)="submitState(localState.value)" autocomplete="off">
 
+        <div class="row">
+            <div class="col s8"><div class="file-field input-field">
+                  <div class="btn">
+                    <span>File</span>
+                    <input type="file">
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                  </div>
+                </div>
+            </div>
+            <div class="col s4">44444444444444s 4444444444444444444444444 4444444444444 444444444444444444444444444444 444444444444444444444444</div>
+        </div>
+        
       <input
         [value]="localState.value"
         (input)="localState.value = $event.target.value"
         placeholder="Submit Local State to App State"
-        autofocus>
+        autofocus> 
 
-      <button>Submit Value</button>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
+      <button >Submit Value</button>
+       
 
       <select materialize="material_select" multiple>
           <option value="" disabled selected>Choose your option</option>
