@@ -1,32 +1,32 @@
 <div>
-  <h1 x-large class="sample-content">Your Content Here</h1>
-
-  <hr>
-
-  <div>
-      INPUT file
-  </div>
-
-  <hr>
-
-
+  <h1 x-large class="sample-content">Inicio</h1>
+ 
+  
   <div>
     <h4>Carga de archivo</h4>
+    <hr>
 
     <form materialize (ngSubmit)="submitState(localState.value)" autocomplete="off">
 
         <div class="row">
-            <div class="col s8"><div class="file-field input-field">
-                  <div class="btn">
-                    <span>File</span>
-                    <input type="file">
-                  </div>
-                  <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text">
-                  </div>
+            <div class="col m7 s12">
+                <div class="file-field input-field">
+                    <div class="btn-floating waves-effect waves-light pulse">
+                        <i class="material-icons dp48">insert_drive_file</i>
+                          <input type="file" (change)='readFile($event)'>
+                    </div>
+                    <div class="file-path-wrapper">                    
+                      <input class="file-path validate" type="text">
+                    </div>
                 </div>
             </div>
-            <div class="col s4">44444444444444s 4444444444444444444444444 4444444444444 444444444444444444444444444444 444444444444444444444444</div>
+            <div class="col m5 s12">
+                44444444444444s 4444444444444444444444444
+               4444444444444 444444444444444444444444444444 444444444444444444444444
+               <div>
+                  {{jsonPreview}}
+              </div>
+              </div>
         </div>
         
       <input
@@ -35,15 +35,7 @@
         placeholder="Submit Local State to App State"
         autofocus> 
 
-      <button >Submit Value</button>
-       
-
-      <select materialize="material_select" multiple>
-          <option value="" disabled selected>Choose your option</option>
-          <option value="tea">Tea</option>
-          <option value="coffee">Coffee</option>
-          <option value="juice">Juice</option>
-        </select>
+        
     </form>
     <!--
         <input type="text" [value]="localState.value" (input)="localState.value = $event.target.value" autofocus>
@@ -52,7 +44,7 @@
         <input type="text" name="textInput" [(ngModel)]="localState.value" autofocus>
       -->
 
-    <pre>this.localState = {{ localState | json }}</pre>
+    <!-- <pre>this.localState = {{ localState | json }}</pre> -->
 
   </div>
 

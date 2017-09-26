@@ -1,8 +1,8 @@
+import * as jquery from 'jquery';
 import {
   Component,
   OnInit
 } from '@angular/core';
-
 
 import { AppState } from '../app.service';
 import { Title } from './title';
@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit {
    * Set our default values
    */
   public localState = { value: '' };
+  private jsonPreview: string;
   /**
    * TypeScript public modifiers
    */
@@ -45,6 +46,8 @@ export class HomeComponent implements OnInit {
 
   public ngOnInit() {
     console.log('hello `Home` component');
+    this.jsonPreview = '';
+  
     /**
      * this.title.getData().subscribe(data => this.data = data);
      */
@@ -56,4 +59,22 @@ export class HomeComponent implements OnInit {
     this.appState.set('value', value);
     this.localState.value = '';
   }
+
+  public readFile(fileInput: any) {
+      let self = this;
+
+      if (fileInput.target.files && fileInput.target.files[0]) {
+          let reader = new FileReader();
+
+          reader.onload =  (e: any) => {
+            //jquery('#preview').text('src', );
+             let base64result = e.target.result.split(',')[1];
+             self.jsonPreview = atob(base64result);
+             //TODO sacar objeto
+          };
+
+          reader.readAsDataURL(fileInput.target.files[0]);
+      }
+  }
+
 }
