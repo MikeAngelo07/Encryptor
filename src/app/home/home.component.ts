@@ -7,6 +7,9 @@ import {
 import { AppState } from '../app.service';
 import { Title } from './title';
 import { XLargeDirective } from './x-large';
+import { Cryptography } from '../core/Cryptography'
+import { EncryptorFile } from '../core/EncryptorFile'
+
 
 @Component({
   /**
@@ -36,17 +39,19 @@ export class HomeComponent implements OnInit {
    */
   public localState = { value: '' };
   private jsonPreview: string;
+  private encryptorFile: EncryptorFile;
   /**
    * TypeScript public modifiers
    */
   constructor(
     public appState: AppState,
-    public title: Title
+    public title: Title,
   ) {}
 
   public ngOnInit() {
     console.log('hello `Home` component');
     this.jsonPreview = '';
+    this.encryptorFile = new EncryptorFile();
   
     /**
      * this.title.getData().subscribe(data => this.data = data);
@@ -67,14 +72,15 @@ export class HomeComponent implements OnInit {
           let reader = new FileReader();
 
           reader.onload =  (e: any) => {
-            //jquery('#preview').text('src', );
+             //jquery('#preview').text('src', );
              let base64result = e.target.result.split(',')[1];
              self.jsonPreview = atob(base64result);
+
+             Object.assign(self.encryptorFile, self.jsonPreview);
              //TODO sacar objeto
           };
 
           reader.readAsDataURL(fileInput.target.files[0]);
       }
   }
-
 }
