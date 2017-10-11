@@ -75,9 +75,9 @@ export class HomeComponent implements OnInit {
              //jquery('#preview').text('src', );
              let base64result = e.target.result.split(',')[1];
              self.jsonPreview = atob(base64result);
-
-             Object.assign(self.encryptorFile, self.jsonPreview);
+             Object.assign(self.encryptorFile, JSON.parse( self.jsonPreview));
              //TODO sacar objeto
+             
           };
 
           reader.readAsDataURL(fileInput.target.files[0]);

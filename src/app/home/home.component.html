@@ -20,12 +20,47 @@
                     </div>
                 </div>
             </div>
-            <div class="col m5 s12">
-                44444444444444s 4444444444444444444444444
-               4444444444444 444444444444444444444444444444 444444444444444444444444
-               <div>
-                  {{jsonPreview}}
-              </div>
+            <div class="col m5 s12"> 
+                  <div class="card-panel light-green lighten-4 ">
+                    <span class="grey-text text-darken-4"> 
+                          <table> 
+                              <tbody>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td class="grey-text text-darken-1">{{encryptorFile.Name}}</td> 
+                                </tr>
+                                <tr>
+                                  <td>Versión de archivo</td>
+                                  <td class="grey-text text-darken-1">{{encryptorFile.FileVersion}}</td> 
+                                </tr> 
+                                <tr>
+                                  <td>Ultima modificación</td>
+                                  <td class="grey-text text-darken-1">{{encryptorFile.ModifiedDate}}</td> 
+                                </tr> 
+                                <tr>
+                                    <td>Descripción</td>
+                                    <td class="grey-text text-darken-1">{{encryptorFile.Description}}</td> 
+                                </tr> 
+                                <tr>
+                                    <td>Indicio de ultimo guardado</td>
+                                    <td class="grey-text text-darken-1">{{encryptorFile.LastSavedHint}}</td> 
+                                </tr>
+                                <tr>
+                                    <td>Indicio de contraseña</td>
+                                    <td class="grey-text text-darken-1">{{encryptorFile.PasswordHint}}</td> 
+                                </tr>
+                                <tr>
+                                    <td>Guardado desde</td>
+                                    <td class="grey-text text-darken-1">{{encryptorFile.SavedFrom}}</td> 
+                                </tr>
+                              </tbody>
+                          </table>
+                    </span>
+                  </div>   
+                  
+                  <div>
+                      {{jsonPreview}}
+                  </div>
               </div>
         </div>
         
