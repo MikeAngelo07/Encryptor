@@ -9,5 +9,7 @@ export class EncryptorFile {
       public LastSavedHint: string;
       public PasswordHint: string;
       public SavedFrom: string;
-      public EncryptedPasswords: string;
+      public EncryptedPassword: string;
+      public PlainPassword: string;
+      public PinCode: string;
 }

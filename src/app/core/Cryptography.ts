@@ -1,5 +1,7 @@
 import CryptoJS from 'crypto-js';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class Cryptography {
 
       public Encrypt (textToEncrypt: string, password: string, pinCode: number ): string {
@@ -34,6 +36,13 @@ export class Cryptography {
                   standardKeyAndPin.iv.toString());
 
             return decryptedText;
+      }
+
+      public b64DecodeUnicode(str: string) {
+            // Going backwards: from bytestream, to percent-encoding, to original string.
+            return decodeURIComponent(atob(str).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
       }
 
       private _Encrypt (messagetoEncrypt: string, key: string, IV: string) : string

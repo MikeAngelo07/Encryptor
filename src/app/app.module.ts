@@ -5,6 +5,8 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import '../../node_modules/materialize-css/dist/js/materialize.js';
 
 import { MaterializeModule } from 'angular2-materialize';
@@ -18,6 +20,7 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
+import { Cryptography } from './core/Cryptography';
 import { HomeComponent } from './home';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
@@ -29,7 +32,8 @@ import '../styles/headings.css';
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
-  AppState
+  AppState,
+  Cryptography
 ];
 
 type StoreType = {
@@ -58,7 +62,8 @@ type StoreType = {
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
-    MaterializeModule
+    MaterializeModule,
+    BrowserAnimationsModule
   ],
   /**
    * Expose our Services and Providers into Angular's dependency injection.

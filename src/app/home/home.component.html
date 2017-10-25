@@ -10,15 +10,47 @@
 
         <div class="row">
             <div class="col m7 s12">
-                <div class="file-field input-field">
-                    <div class="btn-floating waves-effect waves-light pulse">
-                        <i class="material-icons dp48">insert_drive_file</i>
-                          <input type="file" (change)='readFile($event)'>
-                    </div>
-                    <div class="file-path-wrapper">                    
-                      <input class="file-path validate" type="text">
+                
+                <div class="row">
+                     <div class="s12">
+                        <div class="file-field input-field">
+                            <div class="btn-floating waves-effect waves-light pulse">
+                                <i class="material-icons dp48">insert_drive_file</i>
+                                <input type="file" (change)='readFile($event)'>
+                            </div>
+                            <div class="file-path-wrapper">                    
+                                <input class="file-path validate" type="text">
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
+                <div class="row">
+                    <div class="s12" *ngIf="fileLoaded">
+                        <div class="input-field col s6">
+                            <input placeholder="Password" [(ngModel)]="encryptorFile.PlainPassword" 
+                                    id="password" name="password" type="text" class="validate">
+                            <label for="password">Password</label>
+                        </div>   
+                        <div class="input-field col s6">
+                            <a class="waves-effect waves-light btn" (click)="DecryptPasswords()">Descifrar</a>
+                        </div>                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="s12" *ngIf="fileLoaded">
+                        <div class="input-field col s6">
+                            <input placeholder="4 dígitos" [(ngModel)]="encryptorFile.PinCode" 
+                                    id="pin" name="pin" type="text" class="validate">
+                            <label for="pin">Código Pin</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <a class="waves-effect waves-light btn" (click)="DecryptPasswords()">Descifrar</a>
+                        </div>                        
+                    </div>
+                </div>
+                
             </div>
             <div class="col m5 s12"> 
                   <div class="card-panel light-green lighten-4 ">
