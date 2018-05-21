@@ -10,7 +10,6 @@ import { XLargeDirective } from './x-large';
 import { Cryptography } from '../core/Cryptography';
 import { EncryptorFile } from '../core/EncryptorFile';
 
-
 @Component({
   /**
    * The selector is what angular internally uses
@@ -31,9 +30,9 @@ import { EncryptorFile } from '../core/EncryptorFile';
   /**
    * Every Angular template is first compiled by the browser before Angular runs it's compiler.
    */
-  templateUrl: './home.component.html'
+  templateUrl: './utilities.component.html'
 })
-export class HomeComponent implements OnInit {
+export class UtilitiesComponent implements OnInit {
   /**
    * Set our default values
    */
@@ -48,8 +47,7 @@ export class HomeComponent implements OnInit {
    * TypeScript public modifiers
    */
   constructor(
-    public appState: AppState,
-    public title: Title,
+    public appState: AppState, 
     public cryptography: Cryptography
   ) {}
 
@@ -91,15 +89,5 @@ export class HomeComponent implements OnInit {
           reader.readAsDataURL(fileInput.target.files[0]);
       }
   }
-
-  public DecryptPasswords = () => {
-      var self = this;
-  
-      if(self.encryptorFile.PlainPassword !== undefined && self.encryptorFile.PlainPassword !== '' )
-      {
-
-      }else{
-
-      }
-  }
+ 
 }
